@@ -9,7 +9,8 @@
 		"lint": "next lint",
 		"lint:ts": "tsc --pretty --noEmit",
 		"test": "jest",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"deploy": "next build && next export && firebase deploy --only hosting"
 	},
 	"dependencies": {
 		"daisyui": "^2.38.0",
