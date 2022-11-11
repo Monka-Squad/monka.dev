@@ -14,7 +14,7 @@ export default function Home() {
 			</Head>
 
 			<main className="container">
-				<h1 className="text-lg">Monka Squad</h1>
+				<h1 className="text-lg font-mono">Monka Squad</h1>
 
 				<p className="">Haha funny monke</p>
 			</main>

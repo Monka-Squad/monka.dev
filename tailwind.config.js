@@ -1,15 +1,18 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} \*/
 module.exports = {
 	content: ["./src/**/*.{ts,tsx}"],
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Inter", ...defaultTheme.fontFamily.sans],
-				serif: ["Spectral", "Lora", ...defaultTheme.fontFamily.serif],
-				display: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif],
-				mono: ['"Overpass Mono"', ...defaultTheme.fontFamily.mono],
-				outfit: ["Outfit", ...defaultTheme.fontFamily.sans],
+				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+				serif: ["var(--font-spectral)", ...defaultTheme.fontFamily.serif],
+				display: [
+					"var(--font-source-serif-pro)",
+					...defaultTheme.fontFamily.serif,
+				],
+				mono: ["var(--font-overpass-mono)", ...defaultTheme.fontFamily.mono],
 			},
 			colors: {
 				primary: "#DC2626",
@@ -17,8 +20,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("daisyui")],
-	daisyui: {
-		themes: false,
-	},
+	plugins: [],
 };
