@@ -3,14 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"prepare": "husky install",
 		"dev": "next dev",
+		"test": "jest",
 		"build": "next build",
+		"export": "next export",
 		"start": "next start",
 		"lint": "next lint",
 		"lint:ts": "tsc --pretty --noEmit",
-		"test": "jest",
-		"prepare": "husky install",
-		"deploy": "next build && next export && firebase deploy --only hosting"
+		"ci": "yarn install --immutable --immutable-cache --check-cache"
 	},
 	"dependencies": {
 		"@next/font": "^13.0.3",
