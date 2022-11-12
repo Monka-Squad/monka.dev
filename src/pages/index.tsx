@@ -1,7 +1,8 @@
+import Home from "@templates/home";
 import Layout from "@templates/layout";
 import Head from "next/head";
 
-export default function Home() {
+export default function HomePage() {
 	return (
 		<Layout>
 			<Head>
@@ -13,11 +14,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className="container">
-				<h1 className="text-lg font-mono">Monka Squad</h1>
-
-				<p className="">Haha funny monke</p>
-			</main>
+			<Home />
 		</Layout>
 	);
 }

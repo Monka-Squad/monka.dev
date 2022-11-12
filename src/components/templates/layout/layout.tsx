@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Content from "./content";
 
 interface Props {
 	children: React.ReactNode;
@@ -7,9 +6,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
 	return (
-		<div className="flex flex-col w-full max-w-full h-full min-h-screen">
-			<Content>{children}</Content>
-		</div>
+		<div className="w-full max-w-full h-full min-h-screen">{children}</div>
 	);
 };
 
