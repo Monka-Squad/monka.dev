@@ -34,7 +34,11 @@ const fonts = [inter, spectral, sourceSerifPro, overpassMono];
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<ThemeProvider attribute="class">
+		<ThemeProvider
+			attribute="class"
+			enableSystem={false}
+			themes={["light", "dark"]}
+		>
 			<main className={`${fonts.map((f) => f.variable).join(" ")} font-sans`}>
 				<Component {...pageProps} />
 			</main>
