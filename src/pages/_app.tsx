@@ -6,6 +6,7 @@ import {
 	Source_Serif_Pro,
 	Spectral,
 } from "@next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -33,8 +34,10 @@ const fonts = [inter, spectral, sourceSerifPro, overpassMono];
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<main className={`${fonts.map((f) => f.variable).join(" ")} font-sans`}>
-			<Component {...pageProps} />
-		</main>
+		<ThemeProvider attribute="class">
+			<main className={`${fonts.map((f) => f.variable).join(" ")} font-sans`}>
+				<Component {...pageProps} />
+			</main>
+		</ThemeProvider>
 	);
 }
