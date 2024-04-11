@@ -1,12 +1,12 @@
-import "../styles/globals.scss";
-import type { AppProps } from "next/app";
 import {
 	Inter,
 	Overpass_Mono,
-	Source_Serif_Pro,
+	Source_Serif_4,
 	Spectral,
 } from "@next/font/google";
 import { ThemeProvider } from "next-themes";
+import type { AppProps } from "next/app";
+import "../styles/globals.scss";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -19,8 +19,8 @@ const spectral = Spectral({
 	subsets: ["latin"],
 });
 
-const sourceSerifPro = Source_Serif_Pro({
-	variable: "--font-source-serif-pro",
+const sourceSerifPro = Source_Serif_4({
+	variable: "--font-source-serif-4",
 	weight: ["400", "700"],
 	subsets: ["latin"],
 });
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<ThemeProvider
 			attribute="class"
-			enableSystem={false}
+			enableSystem={true}
 			themes={["light", "dark"]}
 		>
 			<main className={`${fonts.map((f) => f.variable).join(" ")} font-sans`}>
