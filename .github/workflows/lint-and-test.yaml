@@ -12,14 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: mskelton/setup-yarn@v1
-        with:
-          flags: --immutable-cache
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn install
-
       - name: Run tests
         run: yarn test
 
@@ -29,13 +21,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: mskelton/setup-yarn@v1
-        with:
-          flags: --immutable-cache
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "yarn"
-      - run: yarn install
-
       - name: Lint
-        run: yarn lint
+        run: yarn lint:all
